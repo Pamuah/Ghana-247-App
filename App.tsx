@@ -1,19 +1,20 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import Home from "./Screens/home";
+import BottomNavigation from "./component/bottomNav";
+
+const AppStack = createStackNavigator();
 
 const App = () => {
-  const stack = createStackNavigator();
   return (
     <NavigationContainer>
-      <stack.Navigator>
-        <stack.Screen
-          name="HomeScreen"
-          component={Home}
+      <AppStack.Navigator>
+        <AppStack.Screen
+          name="Main"
+          component={BottomNavigation} // Use BottomNavigation as the default screen
           options={{ headerShown: false }}
         />
-      </stack.Navigator>
+      </AppStack.Navigator>
     </NavigationContainer>
   );
 };
